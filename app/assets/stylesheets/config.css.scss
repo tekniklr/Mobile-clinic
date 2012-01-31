@@ -1,0 +1,50 @@
+/* ******************************************************** */
+/* configuration for all stylesheets                        */
+/* ******************************************************** */
+
+/* colors */
+// blue - pantone 2718C (C67, M44, Y0, K0)
+$blue: #545CFF;
+// green - pantone 556C (C60, M13, Y54, K0)
+$green: #66DE75;
+// grey - pantone 427C (C17, M11, Y13, K0)
+$grey: #D4E3DE;
+$gray: $grey;
+$page_bg: $blue;
+$content_bg: #ffffff;
+$navigation_bg: $green;
+$base_font_color: #607890; // from boilerplate
+$header_font_color: $grey;
+$navigation_font_color: $grey;
+$hover_color: darken($blue, 50%);
+$link_color: $hover_color - #666600;
+$visited_link_color: darken($hover_color, 15%);
+
+/* widths */
+$max_page_width: 61.75em;
+$head_width: 100%;
+$navigation_width: 100%;
+$foot_width: 100%;
+
+/* fonts */
+$base_font_size: 12px; // set to 13px in boilerplate
+$content_font_family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+
+/* ******************************************************** */
+/* mixins                                                   */
+/* ******************************************************** */
+
+@mixin rounded($size: 2px, $color: $border_color, $radius: 1em, $padding: 2em, $style: dashed) {
+  border: $size $style $color;
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  padding: $padding;
+}
+
+@mixin transparent($opacity) {
+  filter: alpha( opacity = $opacity*100 );
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  opacity: $opacity;
+}
