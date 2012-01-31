@@ -146,7 +146,7 @@ h1 {
   clear: both;
   background-color: $content_bg;
   overflow: hidden;
-  @include rounded(1px, $border_color, 1em, 0, solid);
+  @include rounded(1px, $border_color, .75em, 0, solid);
   margin: 0;
   #content {
     margin: 1em;
