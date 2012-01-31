@@ -36,37 +36,38 @@
           = link_to image_tag("mobile_clinic.png", :alt => TITLE), root_url
         #directions
           \#TODO: directions/hours go here
-      %nav#navigation{:role =>'navigation'}
-        %ul
-          %li
-            = link_to 'Services', services_url
-          %li
-            = link_to 'Forms', forms_url
-          %li
-            = link_to 'Pre-Op / Post-Op', op_instructions_url
-          %li
-            = link_to 'About Us', about_url
-          %li
-            = link_to 'Donate', donate_url
-          %li
-            = link_to 'Contact', contact_url
       #main{:role => 'main'}
-        %h1 #{@page_title}
-        - if flash[:error]
-          #flash.error
-            %h2 Error
-            = flash[:error]
-        - if flash[:notice]
-          #flash.notice
-            %h2 Notice
-            = flash[:notice]
-        = yield
-        %footer#pagefoot{:role => 'contentinfo'}
-          %p
-            &copy;2012#{(Date.today.year == 2012) ? '' : "-#{Date.today.year}"}
-            \#TODO - business name here
-          %p
-            = link_to "site design by Teri Solow", 'http://tekniklr.com'
+        %nav#navigation{:role =>'navigation'}
+          %ul
+            %li
+              = link_to 'Services', services_url
+            %li
+              = link_to 'Forms', forms_url
+            %li
+              = link_to 'Pre-Op / Post-Op', op_instructions_url
+            %li
+              = link_to 'About Us', about_url
+            %li
+              = link_to 'Donate', donate_url
+            %li
+              = link_to 'Contact', contact_url
+        #content
+          %h1 #{@page_title}
+          - if flash[:error]
+            #flash.error
+              %h2 Error
+              = flash[:error]
+          - if flash[:notice]
+            #flash.notice
+              %h2 Notice
+              = flash[:notice]
+          = yield
+      %footer#pagefoot{:role => 'contentinfo'}
+        %p
+          &copy;2012#{(Date.today.year == 2012) ? '' : "-#{Date.today.year}"}
+          \#TODO - business name here
+        %p
+          = link_to "site design by Teri Solow", 'http://tekniklr.com'
     / # include all other javascript, which will be bundled
     = javascript_include_tag :application
     = yield :javascript

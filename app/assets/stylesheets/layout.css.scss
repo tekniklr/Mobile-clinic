@@ -62,12 +62,12 @@ a:hover { color: $hover_color; }
 #pagehead {
   background-image: url(/assets/background.png);
   background-repeat: no-repeat;
-  background-position: bottom right;
+  background-position: bottom left;
   height: 80px;
   overflow: hidden;
   max-width: $head_width;
   color: $header_font_color;
-  padding: 0 0 .25em .25em;
+  padding: 0;
   margin: 0;
   #banner {
     float: left;
@@ -91,6 +91,7 @@ a:hover { color: $hover_color; }
   max-width: $navigation_width;
   color: $navigation_font_color;
   background-color: $navigation_bg;
+  border-bottom: 2px solid #000000;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -123,26 +124,14 @@ a:hover { color: $hover_color; }
     font-weight: bold;
     color: $hover_color;
   }
-  .break {
-    /*
-      the nav was doing stupid things when fluidly resized.
-      this fixes it. the 1px also makes subnavs look better.
-    */ 
-    clear: both;
-    background-color: $navigation_bg;
-    width: 100%;
-    height: 1px;
-  }
 }
 
 h1 {
   font-weight: bold;
-  font-size: 160%;
-  text-transform: lowercase;
+  font-size: 130%;
   margin: 1em 0em 1.5em 0;
   padding: 0.25em 0 0.25em 0;
-  text-align: center;
-  border-bottom: 1px solid $base_font_color;
+  text-align: left;
   a:link, a:visited, a:active {
     color: $base_font_color;
     text-decoration: none;
@@ -155,8 +144,13 @@ h1 {
 #main {
   clear: both;
   background-color: $content_bg;
+  overflow: hidden;
+  @include rounded(1px, #000000, 1em, 0, solid);
   margin: 0;
-  padding: 1em;
+  #content {
+    margin: 1em;
+    padding: 0;
+  }
   #footnote {
     text-align: center;
     font-size: 80%;
@@ -173,14 +167,13 @@ h1 {
   text-align: center;
   font-size: 75%;
   max-width: $foot_width;
+  color: $footer_font_color;
   padding: .5em 0 .5em 0;
   margin-top: 3em;
   margin: auto;
   a:link, a:active, a:visited, a:hover {
     text-decoration: none;
-  }
-  a:hover {
-    color: $hover_color;
+    color: $footer_font_color;
   }
   p {
     margin: 0;
