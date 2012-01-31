@@ -91,8 +91,9 @@ a:hover { color: $hover_color; }
   max-width: $navigation_width;
   color: $navigation_font_color;
   background-color: $navigation_bg;
-  border-bottom: 2px solid #000000;
-  margin: 0;
+  border-top: 1px solid $border_color;
+  border-bottom: 1px solid $border_color;
+  margin: .5em 0 .5em 0;
   padding: 0;
   overflow: hidden;
   ul {
@@ -145,7 +146,7 @@ h1 {
   clear: both;
   background-color: $content_bg;
   overflow: hidden;
-  @include rounded(1px, #000000, 1em, 0, solid);
+  @include rounded(1px, $border_color, 1em, 0, solid);
   margin: 0;
   #content {
     margin: 1em;
