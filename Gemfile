@@ -22,6 +22,13 @@ end
 
 gem 'jquery-rails'
 
+group :test do
+  gem 'turn', :require => false
+  gem 'shoulda', :require => false
+  gem 'factory_girl_rails', :require => false
+  gem 'minitest', :require => false
+end
+
 group :production do
   gem 'exception_notification'
   # gem 'therubyracer'

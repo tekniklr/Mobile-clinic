@@ -6,7 +6,6 @@
     <th>Content</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @blurbs.each do |blurb| %>
@@ -15,11 +14,6 @@
     <td><%= blurb.content %></td>
     <td><%= link_to 'Show', blurb %></td>
     <td><%= link_to 'Edit', edit_blurb_path(blurb) %></td>
-    <td><%= link_to 'Destroy', blurb, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Blurb', new_blurb_path %>

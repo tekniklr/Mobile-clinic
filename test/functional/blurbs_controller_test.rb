@@ -2,48 +2,60 @@ require 'test_helper'
 
 class BlurbsControllerTest < ActionController::TestCase
   setup do
-    @blurb = blurbs(:one)
+    @blurb = Factory.create(:blurb)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:blurbs)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should create blurb" do
-    assert_difference('Blurb.count') do
-      post :create, blurb: @blurb.attributes
+  context "when logged in" do
+    
+    setup do
+      @user = Factory.create(:user)
     end
 
-    assert_redirected_to blurb_path(assigns(:blurb))
-  end
-
-  test "should show blurb" do
-    get :show, id: @blurb
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @blurb
-    assert_response :success
-  end
-
-  test "should update blurb" do
-    put :update, id: @blurb, blurb: @blurb.attributes
-    assert_redirected_to blurb_path(assigns(:blurb))
-  end
-
-  test "should destroy blurb" do
-    assert_difference('Blurb.count', -1) do
-      delete :destroy, id: @blurb
+    should "get index" do
+      get(:index, nil, {'user_id' => @user.id})
+      assert_response :success
+      assert_not_nil assigns(:blurbs)
     end
 
-    assert_redirected_to blurbs_path
+    should "show blurb" do
+      get(:show, {:id => @blurb.id}, {'user_id' => @user.id})
+      assert_response :success
+    end
+
+    should "get edit" do
+      get(:edit, {:id => @blurb.id}, {'user_id' => @user.id})
+      assert_response :success
+    end
+
+    should "update blurb" do
+      put(:update, {:id => @blurb.id, :blurb => @blurb.attributes}, {'user_id' => @user.id})
+      assert_redirected_to blurb_path(assigns(:blurb))
+    end
+
   end
+  
+  context "when not logged in" do
+    
+    should "not get index" do
+      get :index
+      assert_redirected_to root_url
+    end
+
+    should "not show blurb" do
+      get :show, id: @blurb.id
+      assert_redirected_to root_url
+    end
+
+    should "not get edit" do
+      get :edit, id: @blurb.id
+      assert_redirected_to root_url
+    end
+
+    should "not update blurb" do
+      put :update, id: @blurb.id, blurb: @blurb.attributes
+      assert_redirected_to root_url
+    end
+    
+  end
+
 end

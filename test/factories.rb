@@ -6,6 +6,6 @@ Factory.define :user do |u|
 end
 
 Factory.define :blurb do |f|
-  f.sequence(:name) {|n| "Facet #{n}"}
+  f.sequence(:name) {|n| "Blurb #{n}"}
   f.content "stuff, stuff, and more stuff"
 end

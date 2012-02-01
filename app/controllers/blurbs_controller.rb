@@ -1,4 +1,8 @@
 class BlurbsController < ApplicationController
+  before_filter   :is_admin?
+  before_filter   { |c| c.page_title 'Blurb management' }
+  cache_sweeper   :blurb_sweeper, :only => [:update]
+  
   # GET /blurbs
   # GET /blurbs.json
   def index
@@ -21,36 +25,9 @@ class BlurbsController < ApplicationController
     end
   end
 
-  # GET /blurbs/new
-  # GET /blurbs/new.json
-  def new
-    @blurb = Blurb.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @blurb }
-    end
-  end
-
   # GET /blurbs/1/edit
   def edit
     @blurb = Blurb.find(params[:id])
-  end
-
-  # POST /blurbs
-  # POST /blurbs.json
-  def create
-    @blurb = Blurb.new(params[:blurb])
-
-    respond_to do |format|
-      if @blurb.save
-        format.html { redirect_to @blurb, notice: 'Blurb was successfully created.' }
-        format.json { render json: @blurb, status: :created, location: @blurb }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @blurb.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PUT /blurbs/1
@@ -68,16 +45,5 @@ class BlurbsController < ApplicationController
       end
     end
   end
-
-  # DELETE /blurbs/1
-  # DELETE /blurbs/1.json
-  def destroy
-    @blurb = Blurb.find(params[:id])
-    @blurb.destroy
-
-    respond_to do |format|
-      format.html { redirect_to blurbs_url }
-      format.json { head :no_content }
-    end
-  end
+  
 end

@@ -1,4 +1,5 @@
 class MainController < ApplicationController
+  caches_action   :index, :services, :forms, :op_instructions, :about, :donate, :contact, :layout => false
   
   def index
   end
