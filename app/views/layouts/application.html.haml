@@ -5,7 +5,7 @@
     %meta{'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1"}/
     %meta{'http-equiv' => "Content-Type", :content => "text/html;charset=utf-8"}/
 
-    %title #{TITLE} #{!@page_title.blank? and " - #{@page_title}" }
+    %title #{TITLE} #{!@page_title.blank? ? " - #{@page_title}" : '' }
 
     %meta{:name => "description", :content => "#{DESCRIPTION}"}/
     %meta{:name => "author", :content => "Teri Solow"}/
@@ -44,9 +44,9 @@
             %li
               = link_to 'Forms', forms_url
             %li
-              = link_to 'Pre-Op / Post-Op', op_instructions_url
+              = link_to 'Pre/Post Op', op_instructions_url
             %li
-              = link_to 'About Us', about_url
+              = link_to 'About', about_url
             %li
               = link_to 'How you can help', donate_url
             %li

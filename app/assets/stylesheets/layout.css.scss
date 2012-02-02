@@ -91,7 +91,6 @@ a:hover { color: $hover_color; }
 
 #navigation {
   max-width: $navigation_width;
-  color: $navigation_font_color;
   background-color: $navigation_bg;
   border-top: 1px solid $border_color;
   border-bottom: 1px solid $border_color;
@@ -103,28 +102,28 @@ a:hover { color: $hover_color; }
     display: block;
     list-style-type: none;
     padding: 0;
-    margin: auto;
+    margin: 0;
     overflow: hidden;
     li {
       display: inline;
-      width: $navigation_width/6;
       text-align: center;
+      color: $navigation_font_color;
+      background-color: $navigation_bg;
       margin: 0;
       float: left;
-      padding: 0.75em 0em 0.75em 0em;
-      background-color: $navigation_bg;
+      padding: .5em 0 .5em 0;
+      width: $navigation_width/6;
     }
   }
   a:link, a:active, a:visited {
     text-decoration: none;
-    font-size: 120%;
+    font-size: 115%;
     font-weight: bold;
     color: $navigation_font_color;
   }
   a:hover {
     font-weight: bold;
-    font-size: 120%;
-    font-weight: bold;
+    font-size: 115%;
     color: $hover_color;
   }
 }
