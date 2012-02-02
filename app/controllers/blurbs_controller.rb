@@ -6,7 +6,7 @@ class BlurbsController < ApplicationController
   # GET /blurbs
   # GET /blurbs.json
   def index
-    @blurbs = Blurb.all
+    @blurbs = Blurb.all.sort_by{|b| b.name}
 
     respond_to do |format|
       format.html # index.html.erb

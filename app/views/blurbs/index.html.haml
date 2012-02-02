@@ -1,0 +1,12 @@
+- if @blurbs.count < 1
+  %p
+    There is currently no editable content configured.
+- else
+  %ul#blurb_list
+    - @blurbs.each do |blurb|
+      %li
+        %strong #{blurb.name}
+        %br
+        = link_to 'Show', blurb
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        = link_to 'Edit', edit_blurb_path(blurb)

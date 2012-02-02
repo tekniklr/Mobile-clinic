@@ -33,6 +33,9 @@ GEM
     arel (3.0.0)
     awesome_print (1.0.2)
     builder (3.0.0)
+    ckeditor (3.7.0.rc2)
+      mime-types (~> 1.17.2)
+      orm_adapter (~> 0.0.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -90,6 +93,7 @@ GEM
       omniauth (~> 1.0)
     omniauth-twitter (0.0.7)
       omniauth-oauth (~> 1.0)
+    orm_adapter (0.0.6)
     pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -145,6 +149,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  ckeditor (= 3.7.0.rc2)
   coffee-rails (~> 3.2.1)
   exception_notification
   factory_girl_rails

@@ -1,0 +1,16 @@
+%p#notice #{notice}
+
+%p
+  %strong
+    = @blurb.name
+
+%hr
+
+= @blurb.content
+
+%hr
+
+%div.center
+  = link_to 'Edit', edit_blurb_path(@blurb)
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  = link_to 'Back to blurb list', blurbs_path

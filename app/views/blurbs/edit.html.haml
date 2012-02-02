@@ -1,0 +1,22 @@
+%h1 Editing #{@blurb.name}
+
+= form_for(@blurb) do |f|
+  - if @blurb.errors.any?
+    %div#error_explanation
+      %h2 #{pluralize(@blurb.errors.count, "error")} prohibited this blurb from being saved:
+      %ul
+        - @blurb.errors.full_messages.each do |msg|
+          %li #{msg}
+          
+  %div.center
+    %div.field
+      = f.cktext_area :content, :toolbar => 'Easy', :width => 800, :height => 400
+    %div.actions
+      = f.submit
+
+%br
+
+%div.center
+  = link_to 'Show', @blurb
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  = link_to 'Back to blurb list', blurbs_path

@@ -6,6 +6,8 @@ gem 'pg'
 # better html
 gem 'haml'
 
+gem "ckeditor", "3.7.0.rc2"
+
 # needed for authentication
 gem 'omniauth'
 gem 'omniauth-twitter'

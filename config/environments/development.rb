@@ -32,8 +32,7 @@ MobileClinic::Application.configure do
   # Do not compress assets
   config.assets.compress = false
 
-  # Expands the lines which load the assets
-  config.assets.debug = true
+  config.assets.debug = false
   
   config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),1,5*1024*1024)
 end
