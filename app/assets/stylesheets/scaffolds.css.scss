@@ -1,56 +1,68 @@
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; }
-
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; }
-
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px; }
-
-a {
-  color: #000;
-  &:visited {
-    color: #666; }
-  &:hover {
-    color: #fff;
-    background-color: #000; } }
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px; } }
-
-#notice {
-  color: green; }
-
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table; }
-
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  h2 {
+/* flash notices / errors */
+#flash, .flash, #error_explanation {
+  width: 80%;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-align: center;
+  font-family: monospace;
+  @include rounded(1px, $border_color, .5em, 1em, dotted);
+  padding-top: .5em;
+  ul {
     text-align: left;
+  }
+  h2{
     font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff; }
-  ul li {
-    font-size: 12px;
-    list-style: square; } }
+    font-size: 110%;
+    border-bottom: 1px solid;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+.notice, #notice {
+  background-color: $content_bg - #220022;
+}
+.error, #error_explanation {
+  background-color: $content_bg - #002222;
+}
+
+/* used for static error pages */
+.dialog {
+}
+
+/* scaffold errors */
+.field_with_errors {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  input {
+    background-color: $content_bg - #002222;
+    border: 1px solid red;
+  }
+}
+
+/* used in scaffold lists */
+table.manage {
+  width: 80%;
+  margin: auto;
+  tr {
+    th, td {
+      padding: .25em;
+      border: 1px dotted $border_color;
+    }
+  }
+}
+
+// for scaffold management within a list
+.list_manage {
+  text-align: center;
+  padding: .5em 0 1em 0;
+}
+
+// for drag-and-drop sortable bits
+.drag {
+  color: #666;
+  cursor: move;
+  font-size: 125%; // ≡ is small
+}
