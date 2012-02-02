@@ -25,6 +25,8 @@ $border_color: #000000;
 /* widths */
 $max_page_width: 70em;
 $head_width: 100%;
+$banner_width: $max_page_width/1.62;
+$directions_width: $max_page_width - $banner_width;
 $navigation_width: 100%;
 $foot_width: 100%;
 

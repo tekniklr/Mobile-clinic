@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :logged_in?
   
+  before_filter :get_directions
+  
   # https://github.com/rails/rails/issues/671
   def routing_error
     respond_to do |format|
@@ -33,6 +35,11 @@ class ApplicationController < ActionController::Base
   
   def is_admin?
     logged_in? or raise UserNotAuthorized
+  end
+  
+  def get_directions
+    blurb = Blurb.find_by_name("Directions (header)")
+    @directions = !blurb.blank? ? blurb.content : ''
   end
   
   private

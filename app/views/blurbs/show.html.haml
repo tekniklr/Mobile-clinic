@@ -6,11 +6,11 @@
 
 %hr
 
-= @blurb.content
+= blurb(@blurb.content)
 
 %hr
 
-%div.center
+.center
   = link_to 'Edit', edit_blurb_path(@blurb)
   &nbsp;&nbsp;|&nbsp;&nbsp;
   = link_to 'Back to blurb list', blurbs_path
