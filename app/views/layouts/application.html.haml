@@ -53,6 +53,15 @@
               = link_to 'How you can help', donate_url
             %li
               = link_to 'Contact', contact_url
+        - if params[:controller] == 'services'
+          %nav#subnav{:role => 'navigation'}
+            %ul
+              %li
+                = link_to 'Vaccinations', vaccinations_url
+              %li
+                = link_to 'Surgery pricing', pricing_url
+              %li
+                = link_to 'Mobile services', mobile_url
         #content
           - if flash[:error]
             #flash.error
@@ -62,6 +71,8 @@
             #flash.notice
               %h2 Notice
               = flash[:notice]
+          - if @page_title
+            %h1 #{@page_title}
           = yield
       %footer#pagefoot{:role => 'contentinfo'}
         %p

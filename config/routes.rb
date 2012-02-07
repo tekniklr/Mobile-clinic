@@ -8,12 +8,15 @@ MobileClinic::Application.routes.draw do
   match '/auth/failure'            => 'sessions#failure'
   
   # pages
-  match '/services' => 'main#services', :as => :services
   match '/forms' => 'main#forms', :as => :forms
   match '/op_instructions' => 'main#op_instructions', :as => :op_instructions
   match '/about' => 'main#about', :as => :about
   match '/donate' => 'main#donate', :as => :donate
   match '/contact' => 'main#contact', :as => :contact
+  match '/services' => 'services#index', :as => :services
+  match '/vaccinations' => 'services#vaccinations', :as => :vaccinations
+  match '/pricing' => 'services#pricing', :as => :pricing
+  match '/mobile' => 'services#mobile', :as => :mobile
   
   resources :blurbs, :only => [:index, :show, :edit, :update]
 

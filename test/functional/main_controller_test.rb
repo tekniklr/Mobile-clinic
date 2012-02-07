@@ -7,11 +7,6 @@ class MainControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  should "get services" do
-    get :services
-    assert_response :success
-  end
-
   should "get forms" do
     get :forms
     assert_response :success

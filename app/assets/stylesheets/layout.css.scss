@@ -63,7 +63,7 @@ a:hover { color: $hover_color; }
   
 #admin {
   width: 100%;
-  text-align: right;
+  text-align: left;
   clear: both;
   font-size: 100%;
   padding-bottom: .25em;
@@ -105,7 +105,7 @@ a:hover { color: $hover_color; }
   background-color: $navigation_bg;
   border-top: 1px solid $border_color;
   border-bottom: 1px solid $border_color;
-  margin: .5em 0 .5em 0;
+  margin: .5em 0 0 0;
   padding: 0;
   overflow: hidden;
   ul {
@@ -138,13 +138,53 @@ a:hover { color: $hover_color; }
     color: $hover_color;
   }
 }
+#subnav {
+  max-width: $navigation_width;
+  background-color: $subnav_bg;
+  border-top: 1px solid $border_color;
+  border-bottom: 1px solid $border_color;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  ul {
+    clear: both;
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    li {
+      display: inline;
+      text-align: center;
+      color: $navigation_font_color;
+      background-color: $subnav_bg;
+      margin: 0;
+      float: left;
+      padding: .5em 0 .5em 0;
+      width: $navigation_width/3;
+    }
+  }
+  a:link, a:active, a:visited {
+    text-decoration: none;
+    font-size: 100%;
+    font-weight: bold;
+    color: $navigation_font_color;
+  }
+  a:hover {
+    font-weight: bold;
+    font-size: 100%;
+    color: $hover_color;
+  }
+}
 
 h1 {
   font-weight: bold;
-  font-size: 130%;
-  margin: 1em 0em 1.5em 0;
-  padding: 0.25em 0 0.25em 0;
-  text-align: left;
+  font-size: 115%;
+  margin: 1em 0em 0em 0;
+  padding: 0em 1em 0.25em 0;
+  text-align: right;
+  color: $green;
+  border-bottom: 1px solid $green;
 }
 
 #main {

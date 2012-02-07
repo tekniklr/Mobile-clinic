@@ -6,12 +6,6 @@ class MainController < ApplicationController
     @home = !blurb.blank? ? blurb.content : ''
   end
   
-  def services
-    @page_title = "Services"
-    blurb = Blurb.find_by_name("Services")
-    @services = !blurb.blank? ? blurb.content : ''
-  end
-  
   def forms
     @page_title = "Forms"
     blurb = Blurb.find_by_name("Forms")
