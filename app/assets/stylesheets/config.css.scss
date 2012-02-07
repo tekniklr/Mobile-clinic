@@ -3,30 +3,31 @@
 /* ******************************************************** */
 
 /* colors */
-// blue - pantone 2718C (C67, M44, Y0, K0)
-$blue: #545CFF;
-// green - pantone 556C (C60, M13, Y54, K0)
-$green: #66DE75;
-// grey - pantone 427C (C17, M11, Y13, K0)
+// blue - pantone 2718C (C67, M44, Y0, K0) (original rgb: #545CFF)
+$blue: #e2e3ff;
+// green - pantone 556C (C60, M13, Y54, K0) (original rgb: #66DE75)
+$green: #1f4e25;
+// grey - pantone 427C (C17, M11, Y13, K0) (original rgb: #D4E3DE)
 $grey: #D4E3DE;
 $gray: $grey;
+
 $page_bg: $blue;
 $content_bg: #ffffff;
 $navigation_bg: $green;
 $base_font_color: #607890; // from boilerplate
-$header_font_color: $grey;
-$footer_font_color: $grey;
+$header_font_color: $green;
+$footer_font_color: $green;
 $navigation_font_color: #ffffff;
-$hover_color: darken($blue, 50%);
-$link_color: $hover_color - #666600;
-$visited_link_color: darken($hover_color, 15%);
+$hover_color: #66de75;
+$link_color: darken($hover_color, 30%);
+$visited_link_color: darken($hover_color, 50%);
 $border_color: #000000;
 
 /* widths */
 $max_page_width: 70em;
 $head_width: 100%;
-$banner_width: $max_page_width/1.62;
-$directions_width: $max_page_width - $banner_width;
+$banner_width: $max_page_width - ($max_page_width/1.62);
+$directions_width: 30em;
 $navigation_width: 100%;
 $foot_width: 100%;
 

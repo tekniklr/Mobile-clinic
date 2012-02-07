@@ -1,2 +1,2 @@
-TITLE = 'Mobile clinic'
-DESCRIPTION = 'Mobile clinic'
+TITLE = 'Low Cost Spay/Neuter Clinic'
+DESCRIPTION = 'Low Cost Spay/Neuter Clinic'
