@@ -51,6 +51,12 @@ a:hover { color: $hover_color; }
   width: $max_page_width/2;
   height: 165px;
   z-index: 100;
+  #directions {
+    text-align: right;
+    font-size: 90%;
+    margin: 0;
+    padding: 1.25em 0 0 0;
+  }
 }
 
 #container {
@@ -90,13 +96,6 @@ a:hover { color: $hover_color; }
     text-align: left;
     font-size: 150%;
     margin: 1em 0 1em 0;
-  }
-  #directions {
-    float: right;
-    width: $directions_width;
-    text-align: right;
-    font-size: 90%;
-    margin: 1em 0 0 0;
   }
 }
 

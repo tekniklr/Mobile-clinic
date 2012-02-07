@@ -24,6 +24,8 @@
     = yield :header
   %body
     #catbox
+      #directions
+        = blurb(@directions)
     #container
       - if logged_in? 
         #admin
@@ -35,8 +37,6 @@
       %header#pagehead{:role => 'banner'}
         #banner
           = link_to image_tag("clinic_logo.png", :alt => TITLE, :width => 300,  :height => 125), root_url
-        #directions
-          = blurb(@directions)
         .clear
       #main{:role => 'main'}
         %nav#navigation{:role =>'navigation'}
