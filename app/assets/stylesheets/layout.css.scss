@@ -39,6 +39,9 @@ a:hover { color: $hover_color; }
 .right {
   text-align: right;
 }
+.clear {
+  clear: both;
+}
 
 #catbox {
   background-image: url(/assets/friends.png);

@@ -13,13 +13,13 @@ class MainController < ApplicationController
   end
   
   def op_instructions
-    @page_title = "Pre/Post Op"
+    @page_title = "Pre/Post op"
     blurb = Blurb.find_by_name("Pre/Post Op")
     @op_instructions = !blurb.blank? ? blurb.content : ''
   end
   
   def about
-    @page_title = "About"
+    @page_title = "About us"
     blurb = Blurb.find_by_name("About")
     @about = !blurb.blank? ? blurb.content : ''
   end

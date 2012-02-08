@@ -46,9 +46,9 @@
             %li
               = link_to 'Forms', forms_url
             %li
-              = link_to 'Pre/Post Op', op_instructions_url
+              = link_to 'Pre/Post op', op_instructions_url
             %li
-              = link_to 'About', about_url
+              = link_to 'About us', about_url
             %li
               = link_to 'How you can help', donate_url
             %li
@@ -74,6 +74,7 @@
           - if @page_title
             %h1 #{@page_title}
           = yield
+          .clear
       %footer#pagefoot{:role => 'contentinfo'}
         %p
           &copy;2012#{(Date.today.year == 2012) ? '' : "-#{Date.today.year}"}
