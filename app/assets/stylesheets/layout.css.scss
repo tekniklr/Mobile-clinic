@@ -55,6 +55,7 @@ a:hover { color: $hover_color; }
   height: 165px;
   z-index: 100;
   #directions {
+    color: $footer_font_color;
     text-align: right;
     font-size: 90%;
     margin: 0;
@@ -143,7 +144,6 @@ a:hover { color: $hover_color; }
 #subnav {
   max-width: $navigation_width;
   background-color: $subnav_bg;
-  border-top: 1px solid $border_color;
   border-bottom: 1px solid $border_color;
   margin: 0;
   padding: 0;

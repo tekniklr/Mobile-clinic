@@ -4,9 +4,9 @@
 
 /* colors */
 // blue - pantone 2718C (C67, M44, Y0, K0) (original rgb: #545CFF)
-$blue: #e2e3ff;
+$blue: #e4e4e4;
 // green - pantone 556C (C60, M13, Y54, K0) (original rgb: #66DE75)
-$green: #1f4e25;
+$green: #348359;
 // grey - pantone 427C (C17, M11, Y13, K0) (original rgb: #D4E3DE)
 $grey: #D4E3DE;
 $gray: $grey;
@@ -14,12 +14,12 @@ $gray: $grey;
 $page_bg: $blue;
 $content_bg: #ffffff;
 $navigation_bg: $green;
-$subnav_bg: #000000;
+$subnav_bg: #3756ae;
 $base_font_color: #607890; // from boilerplate
 $header_font_color: $green;
-$footer_font_color: $green;
+$footer_font_color: $base_font_color;
 $navigation_font_color: #ffffff;
-$hover_color: #66de75;
+$hover_color: #000000;
 $link_color: darken($hover_color, 30%);
 $visited_link_color: darken($hover_color, 50%);
 $border_color: #000000;
