@@ -79,8 +79,6 @@
         %p
           &copy;2012#{(Date.today.year == 2012) ? '' : "-#{Date.today.year}"}
           #{TITLE}
-        %p
-          = link_to "site design by Teri Solow", 'http://tekniklr.com'
     / # include all other javascript, which will be bundled
     = javascript_include_tag :application
     = yield :javascript
