@@ -27,9 +27,4 @@ class MainControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  should "get contact" do
-    get :contact
-    assert_response :success
-  end
-
 end

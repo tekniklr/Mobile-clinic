@@ -30,10 +30,4 @@ class MainController < ApplicationController
     @donate = !blurb.blank? ? blurb.content : ''
   end
   
-  def contact
-    @page_title = "Contact"
-    blurb = Blurb.find_by_name("Contact")
-    @contact = !blurb.blank? ? blurb.content : ''
-  end
-  
 end
