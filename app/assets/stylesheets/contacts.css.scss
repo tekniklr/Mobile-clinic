@@ -1,18 +1,23 @@
 #contact_form {
-  width: 50%;
+  width: 29em;
   margin: 2em auto 0 auto;
   .field {
     clear: both;
+    padding: 0;
     margin: .5em 0 .5em 0;
     label {
       display: block;
       float: left;
       width: 6em;
+      padding: 0;
+      margin: 0;
       font-weight: bold;
     }
     input, textarea {
       @include rounded(1px, #cccccc, .5em, .2em, solid);
       background-color: white;
+      width: 22em;
+      padding: 0;
       margin: .25em 0 .25em 0;
     }
   }
