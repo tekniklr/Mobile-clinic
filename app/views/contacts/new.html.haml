@@ -24,5 +24,7 @@
     .field
       = f.label :content, "Message#{req}".html_safe
       = f.text_area :content, :cols => 30, :rows => 6
+    .field
+      = recaptcha_tags
     .actions
       = f.submit 'Send message'
