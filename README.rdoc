@@ -1,1 +1,1 @@
-Rails source for a new website I'm starting work on.
+Rails source for a friend's business.
