@@ -43,32 +43,16 @@ a:hover { color: $hover_color; }
   clear: both;
 }
 
-#catbox {
-  background-image: url(/assets/friends.png);
-  background-repeat: no-repeat;
-  background-position: top right;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin: 0 0 0 ($max_page_width/2)-($max_page_width/2);
-  width: $max_page_width/2;
-  height: 165px;
-  z-index: 100;
-  #directions {
-    color: $footer_font_color;
-    text-align: right;
-    font-size: 90%;
-    margin: 0;
-    padding: .25em 0 0 0;
-  }
-}
-
 #container {
   max-width: $max_page_width;
-  min-width: $max_page_width;
   margin: auto;
   position: relative;
   z-index: 1;
+  // will switch to mobile @ given size
+  @media screen and (min-width: 500px) {
+    /* regular layout */
+    min-width: $max_page_width;
+  }
 }
   
 #admin {
@@ -88,18 +72,69 @@ a:hover { color: $hover_color; }
 }
 
 #pagehead {
-  height: 150px;
   overflow: hidden;
-  max-width: $head_width;
   color: $header_font_color;
   padding: 0;
   margin: 0;
-  #banner {
-    float: left;
-    width: $banner_width;
-    text-align: left;
-    font-size: 150%;
-    margin: 1em 0 1em 0;
+  // will switch to mobile @ given size
+  @media screen and (min-width: 500px) {
+    /* regular layout */
+    height: 150px;
+    max-width: $head_width;
+    #banner {
+      float: left;
+      width: $banner_width;
+      max-width: $head_width;
+      text-align: left;
+      font-size: 150%;
+      margin: 1em 0 1em 0;
+    }
+    #catbox {
+      background-image: url(/assets/friends.png);
+      background-repeat: no-repeat;
+      background-position: top right;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin: 0 0 0 ($max_page_width/2)-($max_page_width/2);
+      width: $max_page_width/2;
+      height: 165px;
+      z-index: 100;
+      #directions {
+        color: $footer_font_color;
+        text-align: right;
+        font-size: 90%;
+        margin: 0;
+        padding: .25em 0 0 0;
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    /* mobile layout */
+    #banner {
+      max-width: 60%;
+      text-align: left;
+      font-size: 150%;
+      margin: 1em 0 1em 0;
+      float: left;
+      height: 100px;
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+    #catbox {
+      float: right;
+      max-width: 30%;
+      height: 100px;
+      #directions {
+        color: $footer_font_color;
+        text-align: right;
+        font-size: 90%;
+        margin: 0;
+        padding: .25em 1em .25em 0;
+      }
+    }
   }
 }
 
@@ -116,7 +151,7 @@ a:hover { color: $hover_color; }
     display: block;
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: auto;
     overflow: hidden;
     li {
       display: inline;
@@ -126,7 +161,14 @@ a:hover { color: $hover_color; }
       margin: 0;
       float: left;
       padding: .5em 0 .5em 0;
-      width: $navigation_width/6;
+      @media screen and (min-width: 500px) {
+        /* regular layout */
+        width: $max_page_width/6.1;
+      }
+      @media screen and (max-width: 500px) {
+        /* mobile layout */
+        width: $navigation_width/2;
+      }
     }
   }
   a:link, a:active, a:visited {
@@ -145,7 +187,7 @@ a:hover { color: $hover_color; }
   max-width: $navigation_width;
   background-color: $subnav_bg;
   border-bottom: 1px solid $border_color;
-  margin: 0;
+  margin: auto;
   padding: 0;
   overflow: hidden;
   ul {
@@ -163,7 +205,14 @@ a:hover { color: $hover_color; }
       margin: 0;
       float: left;
       padding: .5em 0 .5em 0;
-      width: $navigation_width/3;
+      @media screen and (min-width: 500px) {
+        /* regular layout */
+        width: $max_page_width/3.1;
+      }
+      @media screen and (max-width: 500px) {
+        /* mobile layout */
+        width: $navigation_width/2;
+      }
     }
   }
   a:link, a:active, a:visited {

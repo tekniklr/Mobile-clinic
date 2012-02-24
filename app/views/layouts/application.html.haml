@@ -1,5 +1,5 @@
 !!! 5
-%html{:lang => 'en'}
+-ie_html :lang => 'en' do
   %head
     %meta{:charset => "utf-8"}/
     %meta{'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1"}/
@@ -23,11 +23,6 @@
 
     = yield :header
   %body
-    #catbox
-      #directions
-        = blurb(@directions)
-        = link_to image_tag("facebook_32.png", :alt => 'Become a fan on Facebook', :width => 24,  :height => 24), 'http://facebook.com/TODO'
-        = link_to image_tag("twitter_32.png", :alt => 'Follow us on Twitter', :width => 24,  :height => 24), 'http://twitter.com/TODO'
     #container
       - if logged_in? 
         #admin
@@ -39,6 +34,11 @@
       %header#pagehead{:role => 'banner'}
         #banner
           = link_to image_tag("clinic_logo.png", :alt => TITLE, :width => 300,  :height => 125), root_url
+        #catbox
+          #directions
+            = blurb(@directions)
+            = link_to image_tag("facebook_32.png", :alt => 'Become a fan on Facebook', :width => 24,  :height => 24), 'http://facebook.com/TODO'
+            = link_to image_tag("twitter_32.png", :alt => 'Follow us on Twitter', :width => 24,  :height => 24), 'http://twitter.com/TODO'
         .clear
       #main{:role => 'main'}
         %nav#navigation{:role =>'navigation'}
