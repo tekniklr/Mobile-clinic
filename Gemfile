@@ -4,7 +4,6 @@ gem 'rails', '3.2.1'
 gem 'pg'
 
 gem 'heroku'
-gem 'taps'
 gem 'thin'
 
 # better html
@@ -47,5 +46,6 @@ group :development do
   gem "hirb", :require => false
   gem "awesome_print", :require => false
   gem "looksee", :require => false
+  gem 'taps', :require => false # has an sqlite dependency, which heroku hates
   # gem 'ruby-debug19', :require => 'ruby-debug'
 end
