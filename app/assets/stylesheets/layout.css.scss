@@ -132,7 +132,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
         text-align: right;
         font-size: 90%;
         margin: 0;
-        padding: .25em 0 0 0;
+        padding: .25em .5em 0 0;
       }
     }
   }
@@ -140,7 +140,6 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
     /* mobile layout */
     #banner {
       max-width: 50%;
-      max-height: 8em;
       text-align: left;
       font-size: 150%;
       margin: 0 0 0 1em;
@@ -184,7 +183,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
       margin: 0 auto 0 auto;
       float: left;
       padding: .5em 0 .5em 0;
-      width: $max_page_width/6.1;
+      width: 16%;
       @media screen and (max-width: 500px) {
         /* mobile layout */
         width: $navigation_width/2;
@@ -225,7 +224,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
       margin: 0;
       float: left;
       padding: .5em 0 .5em 0;
-      width: $max_page_width/3.1;
+      width: 33%;
       @media screen and (max-width: 550px) {
         /* mobile layout */
         width: $navigation_width/2;
