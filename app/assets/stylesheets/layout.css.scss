@@ -113,13 +113,11 @@ a:hover { color: $hover_color; }
     /* mobile layout */
     #banner {
       max-width: 50%;
+      max-height: 8em;
       text-align: left;
       font-size: 150%;
-      margin: 1em 0 1em 0;
+      margin: 0;
       float: left;
-      img {
-        max-width: 100%;
-      }
     }
     #catbox {
       float: right;
