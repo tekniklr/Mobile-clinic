@@ -19,6 +19,6 @@
 public/static/
 public/system/
 config/database.yml
-config/initializers/omniauth.rb
+#config/initializers/omniauth.rb
 config/initializers/secret_token.rb
-config/initializers/recaptcha.rb
+#config/initializers/recaptcha.rb
