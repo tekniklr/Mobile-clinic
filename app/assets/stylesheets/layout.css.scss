@@ -112,20 +112,18 @@ a:hover { color: $hover_color; }
   @media screen and (max-width: 500px) {
     /* mobile layout */
     #banner {
-      max-width: 60%;
+      max-width: 50%;
       text-align: left;
       font-size: 150%;
       margin: 1em 0 1em 0;
       float: left;
-      height: 100px;
       img {
-        max-height: 100%;
         max-width: 100%;
       }
     }
     #catbox {
       float: right;
-      max-width: 30%;
+      max-width: 50%;
       height: 100px;
       #directions {
         color: $footer_font_color;
