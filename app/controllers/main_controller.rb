@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-  caches_action   :index, :services, :forms, :op_instructions, :about, :donate, :contact, :layout => false
+  caches_action   :index, :forms, :op_instructions, :about, :donate, :layout => false
   
   def index
     blurb = Blurb.find_by_name("Home page")

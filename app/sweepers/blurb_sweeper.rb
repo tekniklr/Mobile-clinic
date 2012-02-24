@@ -9,12 +9,14 @@ class BlurbSweeper < ActionController::Caching::Sweeper
   
   def expire_cache_for(blurb)
     expire_action  :controller => 'main', :action => 'index'
-    expire_action  :controller => 'main', :action => 'services'
     expire_action  :controller => 'main', :action => 'forms'
     expire_action  :controller => 'main', :action => 'op_instructions'
     expire_action  :controller => 'main', :action => 'about'
     expire_action  :controller => 'main', :action => 'donate'
-    expire_action  :controller => 'main', :action => 'contact'
+    expire_action  :controller => 'services', :action => 'index'
+    expire_action  :controller => 'services', :action => 'vaccinations'
+    expire_action  :controller => 'services', :action => 'pricing'
+    expire_action  :controller => 'services', :action => 'mobile'
   end
   
 end
