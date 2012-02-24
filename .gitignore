@@ -19,4 +19,3 @@
 public/static/
 public/system/
 config/database.yml
-config/initializers/secret_token.rb
