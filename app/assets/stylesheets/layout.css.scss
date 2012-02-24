@@ -71,6 +71,8 @@ a:hover { color: $hover_color; }
   }
 }
 
+html.ie6 #catbox {display: none;}
+html.ie7 #catbox {display: none;}
 #pagehead {
   overflow: hidden;
   color: $header_font_color;
@@ -81,15 +83,16 @@ a:hover { color: $hover_color; }
     /* regular layout */
     height: 150px;
     max-width: $head_width;
+    z-index: 200;
     #banner {
       float: left;
-      width: $banner_width;
-      max-width: $head_width;
+      width: $max_page_width/2;
       text-align: left;
       font-size: 150%;
       margin: 1em 0 1em 0;
     }
     #catbox {
+      float: right;
       background-image: url(/assets/friends.png);
       background-repeat: no-repeat;
       background-position: top right;
