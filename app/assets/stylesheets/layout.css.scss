@@ -71,8 +71,38 @@ a:hover { color: $hover_color; }
   }
 }
 
-html.ie6 #catbox {display: none;}
-html.ie7 #catbox {display: none;}
+html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
+  // copied from below because old IE ignores media queries
+  height: 150px;
+  max-width: $head_width;
+  #banner {
+    float: left;
+    width: $max_page_width/2;
+    text-align: left;
+    font-size: 150%;
+    margin: 1em 0 1em 0;
+  }
+  #catbox {
+    float: right;
+    background-image: url(/assets/friends.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: 0 0 0 ($max_page_width/2)-($max_page_width/2);
+    width: $max_page_width/2;
+    height: 165px;
+    z-index: 100;
+    #directions {
+      color: $footer_font_color;
+      text-align: right;
+      font-size: 90%;
+      margin: 0;
+      padding: .25em 0 0 0;
+    }
+  }
+}
 #pagehead {
   overflow: hidden;
   color: $header_font_color;
@@ -83,7 +113,6 @@ html.ie7 #catbox {display: none;}
     /* regular layout */
     height: 150px;
     max-width: $head_width;
-    z-index: 200;
     #banner {
       float: left;
       width: $max_page_width/2;

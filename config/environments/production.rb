@@ -67,7 +67,7 @@ MobileClinic::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   
   MobileClinic::Application.config.middleware.use ExceptionNotifier,
-    :email_prefix => "[mobile clinic] ",
+    :email_prefix => "[spay/neuter clinic] ",
     :sender_address => %{tsolow@tekniklr.com},
     :exception_recipients => %w{tsolow@tekniklr.com}
 end
