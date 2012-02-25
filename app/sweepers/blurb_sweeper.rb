@@ -17,6 +17,7 @@ class BlurbSweeper < ActionController::Caching::Sweeper
     expire_action  :controller => 'services', :action => 'vaccinations'
     expire_action  :controller => 'services', :action => 'pricing'
     expire_action  :controller => 'services', :action => 'mobile'
+    Rails.cache.delete('directions')
   end
   
 end

@@ -38,8 +38,10 @@ class ApplicationController < ActionController::Base
   end
   
   def get_directions
-    blurb = Blurb.find_by_name("Directions (header)")
-    @directions = !blurb.blank? ? blurb.content : ''
+    @directions = Rails.cache.fetch('directions') do
+      blurb = Blurb.find_by_name("Directions (header)")
+      !blurb.blank? ? blurb.content : ''
+    end
   end
   
   private
