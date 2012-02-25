@@ -67,10 +67,11 @@ a:hover { color: $hover_color; }
 html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
   // copied from below because old IE ignores media queries
   height: 150px;
+  width: 840px;
   max-width: $head_width;
   #banner {
     float: left;
-    width: $max_page_width/2;
+    width: 440px;
     text-align: left;
     font-size: 150%;
     margin: 1em 0 1em 0;
