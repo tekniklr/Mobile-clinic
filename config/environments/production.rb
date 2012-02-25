@@ -69,5 +69,5 @@ MobileClinic::Application.configure do
   MobileClinic::Application.config.middleware.use ExceptionNotifier,
     :email_prefix => "[spay/neuter clinic] ",
     :sender_address => %{tsolow@tekniklr.com},
-    :exception_recipients => %w{tsolow@tekniklr.com}
+    :exception_recipients => %w{tsolow@tekniklr.com drtsheltervet@gmail.com}
 end
