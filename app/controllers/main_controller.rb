@@ -2,8 +2,12 @@ class MainController < ApplicationController
   caches_action   :index, :forms, :op_instructions, :about, :donate, :layout => false
   
   def index
-    blurb = Blurb.find_by_name("Home page")
-    @home = !blurb.blank? ? blurb.content : ''
+    blurbleft = Blurb.find_by_name("Home left")
+    blurbcenter = Blurb.find_by_name("Home center")
+    blurbright = Blurb.find_by_name("Home right")
+    @homeleft = !blurbleft.blank? ? blurbleft.content : ''
+    @homecenter = !blurbcenter.blank? ? blurbcenter.content : ''
+    @homeright = !blurbright.blank? ? blurbright.content : ''
   end
   
   def forms

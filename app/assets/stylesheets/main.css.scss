@@ -1,3 +1,26 @@
-// Place all the styles related to the main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#leftbox {
+  margin: .25em;
+  float: left;
+  width: 40%;
+  min-width: 325px;
+  max-width: 100%;
+  @include rounded(1px, lighten($border_color, 95%), .75em, .5em, solid);
+}
+
+#centerbox {
+  margin: .25em;
+  float: left;
+  width: 25%;
+  min-width: 125px;
+  max-width: 100%;
+  @include rounded(1px, lighten($border_color, 95%), .75em, .5em, solid);
+}
+
+#rightbox {
+  margin: .25em;
+  float: left;
+  width: 25%;
+  min-width: 125px;
+  max-width: 100%;
+  @include rounded(1px, lighten($border_color, 95%), .75em, .5em, solid);
+}
