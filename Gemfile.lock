@@ -33,7 +33,7 @@ GEM
     arel (3.0.2)
     awesome_print (1.0.2)
     builder (3.0.0)
-    ckeditor (3.7.0.rc2)
+    ckeditor (3.7.0.rc3)
       mime-types (~> 1.17.2)
       orm_adapter (~> 0.0.6)
     coffee-rails (3.2.2)
@@ -179,7 +179,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  ckeditor (= 3.7.0.rc2)
+  ckeditor (= 3.7.0.rc3)
   coffee-rails (~> 3.2.1)
   exception_notification
   factory_girl_rails

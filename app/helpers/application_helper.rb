@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def blurb(raw_blurb)
-    sanitize raw_blurb, :tags => %w(a strong em u br cite span ol ul li p b i)
+    sanitize raw_blurb, :tags => %w(a strong em u br strike h1 h2 blockquote sup sub cite div span ol ul li p b i s)
   end
   
   # haml ie/css hacks: https://github.com/sporkd/compass-html5-boilerplate/

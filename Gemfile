@@ -9,7 +9,7 @@ gem 'thin'
 # better html
 gem 'haml'
 
-gem "ckeditor", "3.7.0.rc2"
+gem "ckeditor", "3.7.0.rc3"
 gem "recaptcha", :require => "recaptcha/rails"
 
 # needed for authentication

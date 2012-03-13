@@ -1,6 +1,6 @@
 :javascript
-  var CKEDITOR_BASEPATH = '/ckeditor/';
-= javascript_include_tag 'ckeditor/ckeditor'
+  var CKEDITOR_BASEPATH = '/assets/ckeditor/';
+= javascript_include_tag 'ckeditor/init'
 
 %h1 Editing #{@blurb.name}
 
@@ -14,7 +14,7 @@
           
   .center
     .field
-      = f.cktext_area :content, :toolbar => 'Basic', :width => 800, :height => 400
+      = f.cktext_area :content, :toolbar => 'BasicPlus', :width => 800, :height => 400
     .actions
       = f.submit
 
