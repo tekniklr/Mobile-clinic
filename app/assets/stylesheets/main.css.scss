@@ -1,5 +1,5 @@
 #leftbox {
-  margin: .25em;
+  margin: .25em .25em .25em 0;
   float: left;
   width: 40%;
   min-width: 325px;
@@ -17,7 +17,7 @@
 }
 
 #rightbox {
-  margin: .25em;
+  margin: .25em 0 .25em .25em;
   float: left;
   width: 25%;
   min-width: 125px;
