@@ -14,6 +14,9 @@ video {
 }
 
 body {
+  background-image: url(/assets/background.png);
+  background-repeat: repeat-x;
+  background-position: top left;
   background-color: $page_bg;
 }
 
@@ -54,9 +57,9 @@ a:hover { color: $hover_color; }
   clear: both;
   font-size: 100%;
   padding-bottom: .25em;
-  color: $header_font_color;
+  color: $footer_font_color;
   a:link, a:active, a:visited, a:hover {
-    color: $header_font_color;
+    color: $footer_font_color;
     text-decoration: none;
   }
   a:hover {
@@ -129,7 +132,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
       height: 165px;
       z-index: 100;
       #directions {
-        color: $footer_font_color;
+        color: $header_font_color;
         text-align: right;
         font-size: 90%;
         margin: 0;
@@ -151,7 +154,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
       max-width: 50%;
       height: 100px;
       #directions {
-        color: $footer_font_color;
+        color: $header_font_color;
         text-align: right;
         font-size: 90%;
         margin: 0;
@@ -267,10 +270,10 @@ h2 {
   clear: both;
   background-color: $content_bg;
   overflow: hidden;
-  @include rounded(1px, $border_color, .75em, 0, solid);
   margin: 0;
+  padding: 0 .5em 0 .5em;
   #content {
-    margin: 1em 2em 2em 2em;
+    margin: 1em 1em 2em 1em;
     padding: 0;
     text-align: justify;
   }
@@ -279,7 +282,7 @@ h2 {
 #pagefoot {
   clear: both;
   text-align: center;
-  font-size: 75%;
+  font-size: 90%;
   max-width: $foot_width;
   color: $footer_font_color;
   padding: .5em 0 .5em 0;

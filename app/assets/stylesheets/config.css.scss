@@ -3,21 +3,15 @@
 /* ******************************************************** */
 
 /* colors */
-// blue - pantone 2718C (C67, M44, Y0, K0) (original rgb: #545CFF)
-$blue: #e4e4e4;
-// green - pantone 556C (C60, M13, Y54, K0) (original rgb: #66DE75)
-$green: #348359;
-// grey - pantone 427C (C17, M11, Y13, K0) (original rgb: #D4E3DE)
-$grey: #D4E3DE;
-$gray: $grey;
+$green: #5d8771;
 
-$page_bg: $blue;
+$page_bg: #798ba8;
 $content_bg: #ffffff;
 $navigation_bg: $green;
-$subnav_bg: #3756ae;
+$subnav_bg: #4860a4;
 $base_font_color: #607890; // from boilerplate
 $header_font_color: $green;
-$footer_font_color: $base_font_color;
+$footer_font_color: #ffffff;
 $navigation_font_color: #ffffff;
 $hover_color: #000000;
 $link_color: darken($hover_color, 30%);
