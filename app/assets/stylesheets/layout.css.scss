@@ -295,4 +295,15 @@ h2 {
   p {
     margin: 0;
   }
-} 
+}
+
+.asciiart {
+  width: 90%;
+  margin: auto;
+  padding: 0;
+  pre {
+    font-size: 2px;
+    font-family: monospace;
+    display: inline;
+  }
+}
