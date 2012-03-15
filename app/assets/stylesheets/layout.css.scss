@@ -105,7 +105,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
   // will switch to mobile @ given size
   @media screen and (min-width: 500px) {
     /* regular layout */
-    height: 150px;
+    height: 145px;
     max-width: $head_width;
     #banner {
       float: left;
