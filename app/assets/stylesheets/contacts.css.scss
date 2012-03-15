@@ -1,6 +1,20 @@
 #contact_form {
-  width: 29em;
-  margin: 2em auto 0 auto;
+  @media screen and (min-width: 500px) {
+    /* regular layout */
+    width: 29em;
+    margin: 2em auto 0 auto;
+  }
+  @media screen and (max-width: 500px) {
+    /* mobile layout */
+   width: 100%;
+   max-width: 100%;
+   margin: 2em 0 0 0;
+   table {
+     /* recaptcha shouldn't be bigger than the viewport */
+     max-width: 100%;
+     word-wrap: break-word;
+   }
+  }
   .field {
     clear: both;
     padding: 0;
@@ -16,9 +30,10 @@
     input, textarea {
       @include rounded(1px, #cccccc, .5em, .2em, solid);
       background-color: white;
-      width: 22em;
+      width: 20em;
       padding: 0;
       margin: .25em 0 .25em 0;
+      max-width: 100%;
     }
   }
   .actions {
