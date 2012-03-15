@@ -24,13 +24,6 @@
     = yield :header
   %body
     #container
-      - if logged_in? 
-        #admin
-          Logged in as #{current_user.name}
-          ❤
-          = link_to 'manage content', blurbs_path
-          ❤
-          = link_to 'logout', logout_path
       %header#pagehead{:role => 'banner'}
         #banner
           = link_to image_tag("clinic_logo.png", :alt => TITLE, :width => 300,  :height => 125), root_url
@@ -81,6 +74,13 @@
         %p
           &copy;2012#{(Date.today.year == 2012) ? '' : "-#{Date.today.year}"}
           #{TITLE}
+        - if logged_in? 
+          #admin
+            Logged in as #{current_user.name}
+            ❤
+            = link_to 'manage content', blurbs_path
+            ❤
+            = link_to 'logout', logout_path
     / # include all other javascript, which will be bundled
     = javascript_include_tag :application
     = yield :javascript
