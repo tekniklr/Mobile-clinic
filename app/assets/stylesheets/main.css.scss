@@ -24,3 +24,15 @@
   max-width: 100%;
   @include rounded(1px, lighten($border_color, 95%), .75em, .5em, solid);
 }
+
+.howyoucanhelp {
+  position: relative;
+  bottom: 45em;
+  float: right;
+  max-width: 55%;
+  margin: 1em 0 1em 1em;
+  @media screen and (max-width: 550px) {
+    /* mobile layout */
+    display: none;
+  }
+}
