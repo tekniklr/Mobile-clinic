@@ -19,6 +19,7 @@ $visited_link_color: darken($hover_color, 50%);
 $border_color: #000000;
 
 /* widths */
+$mobile_threshold: 550px;
 $max_page_width: 70em;
 $head_width: 100%;
 $banner_width: $max_page_width - ($max_page_width/1.62);

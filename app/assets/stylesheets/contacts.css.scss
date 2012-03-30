@@ -2,19 +2,19 @@
   float: right;
   max-width: 40%;
   margin: 1em 0 1em 1em;
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: $mobile_threshold) {
     /* mobile layout */
     display: none;
   }
 }
 
 #contact_form {
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: $mobile_threshold) {
     /* regular layout */
     width: 29em;
     margin: 2em auto 0 auto;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: $mobile_threshold) {
     /* mobile layout */
    width: 100%;
    max-width: 100%;
