@@ -106,7 +106,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
   padding: 0;
   margin: 0;
   // will switch to mobile @ given size
-  @media screen and (min-width: $mobile_threshold) {
+  @media screen and (min-width: 500px) {
     /* regular layout */
     height: 145px;
     max-width: $head_width;
@@ -140,7 +140,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
       }
     }
   }
-  @media screen and (max-width: $mobile_threshold) {
+  @media screen and (max-width: 500px) {
     /* mobile layout */
     #banner {
       max-width: 50%;
@@ -188,7 +188,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
       float: left;
       padding: .5em 0 .5em 0;
       width: 16%;
-      @media screen and (max-width: $mobile_threshold) {
+      @media screen and (max-width: 500px) {
         /* mobile layout */
         width: $navigation_width/2;
       }
@@ -229,7 +229,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
       float: left;
       padding: .5em 0 .5em 0;
       width: 33%;
-      @media screen and (max-width: $mobile_threshold) {
+      @media screen and (max-width: 550px) {
         /* mobile layout */
         width: $navigation_width/2;
       }
