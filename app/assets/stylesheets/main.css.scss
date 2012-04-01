@@ -48,15 +48,3 @@
     margin: 0;
   }
 }
-
-.howyoucanhelp {
-  position: relative;
-  bottom: 45em;
-  float: right;
-  max-width: 55%;
-  margin: 1em 0 1em 1em;
-  @media screen and (max-width: 550px) {
-    /* mobile layout */
-    display: none;
-  }
-}
