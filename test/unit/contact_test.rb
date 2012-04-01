@@ -3,7 +3,7 @@ require 'test_helper'
 class ContactTest < ActiveSupport::TestCase
   
   def setup
-    @contact = Factory.build(:contact)
+    @contact = FactoryGirl.build(:contact)
   end
 
   should "validate presence of name" do

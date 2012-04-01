@@ -3,7 +3,7 @@ require 'test_helper'
 class BlurbTest < ActiveSupport::TestCase
 
   def setup
-    @blurb = Factory.build(:blurb)
+    @blurb = FactoryGirl.build(:blurb)
   end
 
   should "validate presence of name" do
@@ -17,8 +17,8 @@ class BlurbTest < ActiveSupport::TestCase
   end
   
   should "validate uniqueness of name" do
-    blurb1 = Factory.create(:blurb, :name => 'some name')
-    blurb2 = Factory.build(:blurb, :name => 'some name')
+    blurb1 = FactoryGirl.create(:blurb, :name => 'some name')
+    blurb2 = FactoryGirl.build(:blurb, :name => 'some name')
     assert !blurb2.valid?
   end
 

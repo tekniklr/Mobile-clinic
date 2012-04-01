@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ContactsControllerTest < ActionController::TestCase
   setup do
-    @contact = Factory.build(:contact)
+    @contact = FactoryGirl.build(:contact)
   end
 
   test "should get new" do

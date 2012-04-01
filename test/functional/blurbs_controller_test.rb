@@ -2,13 +2,13 @@ require 'test_helper'
 
 class BlurbsControllerTest < ActionController::TestCase
   setup do
-    @blurb = Factory.create(:blurb)
+    @blurb = FactoryGirl.create(:blurb)
   end
 
   context "when logged in" do
     
     setup do
-      @user = Factory.create(:user)
+      @user = FactoryGirl.create(:user)
     end
 
     should "get index" do
