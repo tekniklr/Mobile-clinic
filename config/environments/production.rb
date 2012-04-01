@@ -70,4 +70,18 @@ MobileClinic::Application.configure do
     :email_prefix => "[spay/neuter clinic] ",
     :sender_address => %{tsolow@tekniklr.com},
     :exception_recipients => %w{tsolow@tekniklr.com drtsheltervet@gmail.com}
+    
+  # set up email
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address              => 'smtp.gmail.com',
+    :port                 => 587,
+    :domain               => 'lowcostspayneuteraz.org',
+    :user_name            => ENV['GMAIL_SMTP_USER'],
+    :password             => ENV['GMAIL_SMTP_PASSWORD'],
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+  }
+  config.action_mailer.default_url_options = { :host => 'spayneuterclinic.heroku.com' }
+  config.action_mailer.raise_delivery_errors = true
 end
