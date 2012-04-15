@@ -67,7 +67,7 @@ a:hover { color: $hover_color; }
   }
 }
 
-html.ie6 #pagehead, html.ie7 #pagehead, html.ie9 #pagehead {
+html.ie6 #pagehead, html.ie7 #pagehead, html.ie8 #pagehead {
   // copied from below because old IE ignores media queries
   height: 145px;
   width: 840px;
