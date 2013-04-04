@@ -65,3 +65,12 @@
     }
   }
 }
+
+#about {
+  /* make staff images behave better on the about page */
+  img {
+    float: left;
+    margin: 1em;
+    clear: left;
+  }
+}
