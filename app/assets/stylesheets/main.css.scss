@@ -73,7 +73,9 @@
     margin: 1em;
     clear: left;
   }
-  br {
+  hr {
+    display: block;
+    visibility: hidden;
     clear: both;
   }
 }
