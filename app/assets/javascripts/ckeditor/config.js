@@ -8,6 +8,7 @@ CKEDITOR.editorConfig = function( config )
     ['Link', 'Unlink'],
     ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],
     ['Table'],
+    ['HorizontalRule'],
     ['Source']
   ];
   config.format_tags = 'p;h1;h2'
