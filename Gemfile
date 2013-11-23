@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.15'
 gem 'pg'
 
 gem 'heroku'
@@ -9,7 +9,7 @@ gem 'thin'
 # better html
 gem 'haml'
 
-gem "ckeditor", "3.7.0.rc3"
+gem "ckeditor"
 gem "recaptcha", :require => "recaptcha/rails"
 
 # needed for authentication
@@ -32,11 +32,11 @@ group :test do
   gem 'turn', :require => false
   gem 'shoulda', :require => false
   gem 'factory_girl_rails', :require => false
-  gem 'minitest', :require => false
+  gem 'minitest', '~> 4', :require => false
 end
 
 group :production do
-  gem 'exception_notification'
+  gem 'exception_notification', '<4.0'
   # gem 'therubyracer'
 end
 
