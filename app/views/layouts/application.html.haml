@@ -83,6 +83,7 @@
             = link_to 'logout', logout_path
     / # include all other javascript, which will be bundled
     = javascript_include_tag :application
+    = javascript_include_tag params[:controller]
     = yield :javascript
 
     / # asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
