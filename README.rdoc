@@ -1,1 +1,15 @@
+= Mobile Clinic
+
 Rails source for a friend's business.
+
+Originally, the business was supposed to be a mobile (as in, running out of a truck) veterinary clinic, hence the name. But now it has two brick and mortar locations. So it goes.
+
+== Deploying
+
+With the addition of the second brick and mortar location and my unwillingness to maintain two completely separate but effectively identical codebases (they wanted two sites), I have decided to have the second location's code run from a branch, "location_two". All substantial code changes should be made in master and merged into location_two.
+
+Deploy location one to heroku with:
+  git push heroku master
+
+Deploy location two to heroku with:
+  git push location_two location_two:master
