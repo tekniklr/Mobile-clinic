@@ -9,7 +9,7 @@ class MainController < ApplicationController
     @homecenter = !blurbcenter.blank? ? blurbcenter.content : ''
     @homeright = !blurbright.blank? ? blurbright.content : ''
     @calendar_link = 'http://www.google.com/calendar/embed?src=lowcostspayneuteraz.org_fvu6nrd2e6l43ssan6ptob1snk%40group.calendar.google.com&ctz=America/FPhoenix'
-    @map_link = 'http://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=1707+E+Andy+Devine+Ave+Kingman,+AZ+86409&aq=&sll=35.192767,-114.034524&sspn=0.010346,0.01399&ie=UTF8&hq=&hnear=1707+E+Andy+Devine+Ave,+Kingman,+Arizona+86401&t=m&ll=35.192749,-114.034567&spn=0.010521,0.014935&z=14&iwloc=A'
+    @map_link = 'https://www.google.com/maps/place/2231+E+7th+Ave,+Flagstaff,+AZ+86004/@35.2116688,-111.6121022,17z/data=!3m1!4b1!4m2!3m1!1s0x872d8ed0b3f43803:0xdf74011b5f38fe64?hl=en'
   end
   
   def forms
