@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
   def validate
     logger.info "************ validating login"
     auth = request.env["omniauth.auth"]
+    logger.info "************ all auth data:\n #{auth.pretty_inspect}"
     logger.info "************ provider: #{auth["provider"]}"
     logger.info "************ uid: #{auth["uid"]}"
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
