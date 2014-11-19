@@ -20,6 +20,7 @@ MobileClinic::Application.routes.draw do
   
   resources :blurbs, :only => [:index, :show, :edit, :update]
   resources :contacts, :only => [:create]
+  resources :users, :only => [:index, :edit, :update, :destroy]
 
   # https://github.com/rails/rails/issues/671
   # http://techoctave.com/c7/posts/36-rails-3-0-rescue-from-routing-error-solution
