@@ -29,7 +29,11 @@ class SessionsController < ApplicationController
     logger.info "************ uid: #{auth["uid"]}"
     user = User.find_or_create_by_provider_and_uid(auth["provider"], auth["uid"])
     user.name ||= auth["info"]["name"]
-    user.handle ||= auth["info"]["first_name"]
+    if auth["provider"] == 'facebook'
+      user.handle ||= auth["info"]["first_name"]
+    elsif auth["provider"] == 'twitter'
+      user.handle ||= auth["info"]["nickname"]
+    end
     user.save
     logger.info "************ user: #{user.handle}!"
     (user && user.admin?) or raise UserNotAuthorized
