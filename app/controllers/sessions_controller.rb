@@ -28,8 +28,8 @@ class SessionsController < ApplicationController
     logger.info "************ provider: #{auth["provider"]}"
     logger.info "************ uid: #{auth["uid"]}"
     user = User.find_or_create_by_provider_and_uid(auth["provider"], auth["uid"])
-    user.name ||= auth["name"]
-    user.handle ||= auth["first_name"]
+    user.name ||= auth["info"]["name"]
+    user.handle ||= auth["info"]["first_name"]
     user.save
     logger.info "************ user: #{user.handle}!"
     (user && user.admin?) or raise UserNotAuthorized
