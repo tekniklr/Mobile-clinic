@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all.sort_by{|u| u.name}
+    @users = User.all.sort_by{|u| u.name || u.id.to_s}
 
     respond_to do |format|
       format.html # index.html.erb
