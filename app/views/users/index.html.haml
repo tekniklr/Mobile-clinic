@@ -1,0 +1,29 @@
+- if @users.count < 1
+  %p
+    There are not any users currently available in the system... how are you even here?!?!
+- else
+  %table.manage
+    %thead
+      %tr
+        %th
+          Name
+        %th
+          Nickname
+        %th
+          Source
+        %th
+          Admin?
+        %th
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td #{user.name}
+          %td #{user.handle}
+          %td #{user.provider}
+          %td #{user.admin? ? 'yes' : 'no'}
+          %td
+            - if current_user.id != user.id
+              = link_to 'Edit', edit_user_path(user)
+              = link_to('Delete', user, :data => { :confirm => "Are you sure you want to delete #{user.name}?" }, :method => :delete)
+            - else
+              This is you!

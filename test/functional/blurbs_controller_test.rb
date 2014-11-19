@@ -5,10 +5,10 @@ class BlurbsControllerTest < ActionController::TestCase
     @blurb = FactoryGirl.create(:blurb)
   end
 
-  context "when logged in" do
+  context "when logged in as an admin" do
     
     setup do
-      @user = FactoryGirl.create(:user)
+      @user = FactoryGirl.create(:user, admin: true)
     end
 
     should "get index" do
@@ -32,6 +32,34 @@ class BlurbsControllerTest < ActionController::TestCase
       assert_redirected_to blurb_path(assigns(:blurb))
     end
 
+  end
+
+  context "when logged in as a non-admin" do
+    
+    setup do
+      @user = FactoryGirl.create(:user)
+    end
+    
+    should "not get index" do
+      get(:index, nil, {'user_id' => @user.id})
+      assert_redirected_to root_url
+    end
+
+    should "not show blurb" do
+      get(:show, {:id => @blurb.id}, {'user_id' => @user.id})
+      assert_redirected_to root_url
+    end
+
+    should "not get edit" do
+      get(:edit, {:id => @blurb.id}, {'user_id' => @user.id})
+      assert_redirected_to root_url
+    end
+
+    should "not update blurb" do
+      put(:update, {:id => @blurb.id, :blurb => @blurb.attributes}, {'user_id' => @user.id})
+      assert_redirected_to root_url
+    end
+    
   end
   
   context "when not logged in" do

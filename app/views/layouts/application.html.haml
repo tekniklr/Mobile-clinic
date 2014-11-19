@@ -74,11 +74,13 @@
         %p
           &copy;2012#{(Date.today.year == 2012) ? '' : "-#{Date.today.year}"}
           #{TITLE}
-        - if logged_in? 
+        - if current_user and current_user.admin?
           #admin
             Logged in as #{current_user.name}
             ❤
             = link_to 'manage content', blurbs_path
+            ❤
+            = link_to 'manage users', users_path
             ❤
             = link_to 'logout', logout_path
     / # include all other javascript, which will be bundled

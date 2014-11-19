@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   rescue_from Exceptions::UserNotAuthorized, :with => :user_not_authorized
   
   helper_method :current_user
-  helper_method :logged_in?
   
   before_filter :get_directions
   
@@ -25,16 +24,14 @@ class ApplicationController < ActionController::Base
     @title_display = display
   end
   
-  def logged_in?
-    session[:user_id]
-  end
   
   def current_user  
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]  
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    return @current_user
   end
   
   def is_admin?
-    logged_in? or raise UserNotAuthorized
+    (current_user and current_user.admin?) or raise UserNotAuthorized
   end
   
   def get_directions
@@ -47,7 +44,7 @@ class ApplicationController < ActionController::Base
   private
   
   def user_not_authorized
-    flash[:error] = "You do not have access to this page."
+    flash[:error] = "You do not have access to this page. If you believe you should have access, please contact the site owner."
     redirect_to root_url
   end
   

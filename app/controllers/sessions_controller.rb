@@ -3,7 +3,10 @@ class SessionsController < ApplicationController
   def login
     logger.info "************ Login page requested"
     page_title 'login', true
-    if Rails.env.development?
+    if current_user
+      logger.info "************ already logged in as #{current_user.handle} (user ID #{current_user.id})"
+      redirect_to root_url
+    elsif Rails.env.development?
       logger.info "************ dev enviromnent - whatevs"
       # just log in as the first user
       user = User.first
@@ -22,12 +25,15 @@ class SessionsController < ApplicationController
   def validate
     logger.info "************ validating login"
     auth = request.env["omniauth.auth"]
-    logger.info "************ all auth data:\n #{auth.pretty_inspect}"
     logger.info "************ provider: #{auth["provider"]}"
     logger.info "************ uid: #{auth["uid"]}"
-    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
-    user or raise UserNotAuthorized
-    logger.info "************ user found: #{user.handle}!"
+    user = User.find_or_create_by_provider_and_uid(auth["provider"], auth["uid"])
+    user.name ||= auth["name"]
+    user.handle ||= auth["first_name"]
+    user.save
+    logger.info "************ user: #{user.handle}!"
+    (user && user.admin?) or raise UserNotAuthorized
+    logger.info "************ user is an admin"
     session[:user_id] = user.id
     flash[:notice] = 'Signed in!'
     redirect_to root_url
@@ -35,6 +41,7 @@ class SessionsController < ApplicationController
   
   def logout
     session[:user_id] = nil
+    @current_user ||= nil
     flash[:notice] = 'Logged out'
     redirect_to root_url  
   end

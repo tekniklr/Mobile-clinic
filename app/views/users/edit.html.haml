@@ -1,0 +1,30 @@
+%h1 Editing #{@user.name}
+
+= form_for(@user) do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2 #{pluralize(@user.errors.count, "error")} prohibited this user from being updated:
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li #{msg}
+
+  #contact_form
+    .field
+      = f.label :provider, "Source"
+      = f.object.provider
+    .field
+      = f.label :name, "Full name"
+      = f.text_field :name
+    .field
+      = f.label :handle, "Nickname"
+      = f.text_field :handle
+    .field
+      = f.label :admin, "Admin?"
+      = f.check_box :admin
+    .actions
+      = f.submit
+
+%br
+
+.center
+  = link_to 'Back to user list', users_path
