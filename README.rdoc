@@ -8,8 +8,11 @@ Originally, the business was supposed to be a mobile (as in, running out of a tr
 
 With the addition of the second brick and mortar location and my unwillingness to maintain two completely separate but effectively identical codebases (they wanted two sites), I have decided to have the second location's code run from a branch, "location_two". All substantial code changes should be made in master and merged into location_two.
 
+Add heroku apps to this repo:
+  git remote add <sitename> <gitrepo from heroku app settings>
+
 Deploy location one to heroku with:
   git push heroku master
 
 Deploy location two to heroku with:
-  git push location_two location_two:master
+  git push <sitename> location_two:master
