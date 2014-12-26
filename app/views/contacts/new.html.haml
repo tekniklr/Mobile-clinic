@@ -1,6 +1,7 @@
 = image_tag("contact.png", :alt => 'Contact dog', :class => 'contactdog', :width => 320, :height => 200)
 
-= blurb(@contact_blurb)
+- cache @contact_blurb do
+  = blurb(@contact_blurb)
 
 = form_for(@contact) do |f|
   - if @contact.errors.any?
@@ -26,7 +27,8 @@
     .field
       = f.label :content, "Message#{req}".html_safe
       = f.text_area :content, :cols => 30, :rows => 6
-    .field
+    - unless Rails.env.development?
+      .field
       = recaptcha_tags
     .actions
       = f.submit 'Send message'

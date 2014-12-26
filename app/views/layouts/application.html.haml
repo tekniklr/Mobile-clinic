@@ -29,7 +29,8 @@
           = link_to image_tag("clinic_logo.png", :alt => TITLE, :width => 300,  :height => 125), root_url
         #catbox
           #directions
-            = blurb(@directions)
+            - cache @directions do
+              = blurb(@directions)
             = link_to image_tag("facebook_32.png", :alt => 'Become a fan on Facebook', :width => 24,  :height => 24), 'http://facebook.com/LowCostSpayNeuterClinic'
             =# link_to image_tag("twitter_32.png", :alt => 'Follow us on Twitter', :width => 24,  :height => 24), 'http://twitter.com/TODO'
         .clear

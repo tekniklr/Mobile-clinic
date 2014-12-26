@@ -11,7 +11,7 @@ class ContactsControllerTest < ActionController::TestCase
   end
 
   test "should create contact" do
-    post :create, contact: @contact.attributes
+    post :create, :contact => @contact.attributes
     assert_response :success
   end
 

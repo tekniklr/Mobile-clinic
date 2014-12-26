@@ -9,9 +9,9 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(params[:contact])
+    @contact = Contact.new(contact_params)
     respond_to do |format|
-      if verify_recaptcha(:model => @contact, :message => "CAPTCHA incorrect") && @contact.valid?
+      if (Rails.env.development? || verify_recaptcha(:model => @contact, :message => "CAPTCHA incorrect")) && @contact.valid?
         ContactMailer.contact(@contact).deliver
         format.html { redirect_to contact_path, notice: 'Thank you for contacting us!' }
       else
@@ -26,6 +26,10 @@ class ContactsController < ApplicationController
     @page_title = "Contact"
     blurb = Blurb.find_by_name("Contact")
     @contact_blurb = !blurb.blank? ? blurb.content : ''
+  end
+
+  def contact_params
+    params.permit(:contact).permit(:name, :email, :phone, :content)
   end
 
 end
