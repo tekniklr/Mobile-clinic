@@ -213,9 +213,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    turbo-sprockets-rails3 (0.2.9)
-      railties (>= 3.1.0)
-      sprockets (>= 2.0.0)
     turn (0.9.6)
       ansi
     tzinfo (1.2.2)
@@ -250,6 +247,5 @@ DEPENDENCIES
   shoulda
   taps
   thin
-  turbo-sprockets-rails3
   turn
   uglifier

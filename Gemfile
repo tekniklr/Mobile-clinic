@@ -24,7 +24,6 @@ gem 'json'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
-gem 'turbo-sprockets-rails3'
 
 gem 'jquery-rails'
 
