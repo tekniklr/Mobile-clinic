@@ -1,6 +1,5 @@
 class ServicesController < ApplicationController
-  caches_action   :index, :vaccinations, :pricing, :mobile, :layout => false
-
+  
   def index
     @page_title = "Services"
     blurb = Blurb.find_by_name("Services")

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby "2.0.0"
 
-gem 'rails', '~>3.2.0'
+gem 'rails', '~>4.2.0'
 gem 'pg'
 
 gem 'heroku'
@@ -11,7 +11,7 @@ gem 'thin'
 gem 'haml'
 
 gem "jquery-ui-rails"
-gem "ckeditor", "<4.0"
+gem "ckeditor"
 gem "recaptcha", :require => "recaptcha/rails"
 
 # needed for authentication
@@ -20,14 +20,10 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'json'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-  gem 'turbo-sprockets-rails3'
-end
+# assets
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
 gem 'jquery-rails'
 
@@ -35,12 +31,11 @@ group :test do
   gem 'turn', :require => false
   gem 'shoulda', :require => false
   gem 'factory_girl_rails', :require => false
-  gem 'minitest', '~> 4', :require => false
+  gem 'minitest', :require => false
 end
 
 group :production do
-  gem 'exception_notification', '<4.0'
-  # gem 'therubyracer'
+  gem 'exception_notification'
 end
 
 # prevent console errors

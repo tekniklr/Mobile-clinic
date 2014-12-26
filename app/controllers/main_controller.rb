@@ -1,5 +1,4 @@
 class MainController < ApplicationController
-  caches_action   :index, :forms, :op_instructions, :about, :donate, :layout => false
   
   def index
     blurbleft = Blurb.find_by_name("Home left")

@@ -7,5 +7,5 @@
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
 ['About', 'Contact', 'Directions (header)', 'Forms', 'Home page', 'How you can help', 'Mobile', 'Pre/Post Op', 'Pricing', 'Services', 'Vaccinations'].each do |blurb|
-  Blurb.find_or_create_by_name blurb
+  Blurb.where(name: blurb).first_or_create
 end

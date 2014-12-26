@@ -1,7 +1,6 @@
 class BlurbsController < ApplicationController
   before_filter   :is_admin?
   before_filter   { |c| c.page_title 'Blurb management' }
-  cache_sweeper   :blurb_sweeper, :only => [:update]
   
   # GET /blurbs
   # GET /blurbs.json
@@ -36,7 +35,7 @@ class BlurbsController < ApplicationController
     @blurb = Blurb.find(params[:id])
 
     respond_to do |format|
-      if @blurb.update_attributes(params[:blurb])
+      if @blurb.update_attributes(blurb_params)
         format.html { redirect_to @blurb, notice: 'Blurb was successfully updated.' }
         format.json { head :no_content }
       else
@@ -44,6 +43,12 @@ class BlurbsController < ApplicationController
         format.json { render json: @blurb.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  private
+
+  def blurb_params
+    params.require(:blurb).permit(:content)
   end
   
 end

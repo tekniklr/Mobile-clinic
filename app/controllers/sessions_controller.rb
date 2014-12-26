@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     logger.info "************ provider: #{auth["provider"]}"
     logger.info "************ uid: #{auth["uid"]}"
-    user = User.find_or_create_by_provider_and_uid(auth["provider"], auth["uid"])
+    user = User.where(provider: auth["provider"]).where(uid: auth["uid"]).first_or_create
     user.name ||= auth["info"]["name"]
     if auth["provider"] == 'facebook'
       user.handle ||= auth["info"]["first_name"]
