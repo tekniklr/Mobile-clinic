@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
   end
 
   def contact_params
-    params.permit(:contact).permit(:name, :email, :phone, :content)
+    params.require(:contact).permit(:name, :email, :phone, :content)
   end
 
 end
