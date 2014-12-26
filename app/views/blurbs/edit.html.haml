@@ -1,5 +1,10 @@
+- base_path = ''
+- if ENV['PROJECT'] =~ /editor/i
+  - base_path << "/#{Rails.root.basename.to_s}/"
+- base_path << Rails.application.config.assets.prefix
+- base_path << '/ckeditor/'
 :javascript
-  var CKEDITOR_BASEPATH = '/assets/ckeditor/';
+  var CKEDITOR_BASEPATH = '#{base_path}';
 = javascript_include_tag 'ckeditor/init'
 
 %h1 Editing #{@blurb.name}
