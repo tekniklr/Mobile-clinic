@@ -27,7 +27,7 @@
     .field
       = f.label :content, "Message#{req}".html_safe
       = f.text_area :content, :cols => 30, :rows => 6
-    - unless Rails.env.development?
+    - unless (Rails.env.development? || Rails.env.test?)
       .field
       = recaptcha_tags
     .actions

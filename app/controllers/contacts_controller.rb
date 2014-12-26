@@ -11,8 +11,8 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     respond_to do |format|
-      if (Rails.env.development? || verify_recaptcha(:model => @contact, :message => "CAPTCHA incorrect")) && @contact.valid?
-        ContactMailer.contact(@contact).deliver
+      if ((Rails.env.development? || Rails.env.test?) || verify_recaptcha(:model => @contact, :message => "CAPTCHA incorrect")) && @contact.valid?
+        ContactMailer.contact(@contact).deliver_now
         format.html { redirect_to contact_path, notice: 'Thank you for contacting us!' }
       else
         format.html { render action: "new" }
