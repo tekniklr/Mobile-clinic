@@ -43,7 +43,7 @@ MobileClinic::Application.configure do
   config.active_support.deprecation = :notify
   
   MobileClinic::Application.config.middleware.use ExceptionNotification::Rack,
-  :ignore_exceptions => ['ActionController::BadRequest'] + ExceptionNotifier.ignored_exceptions,
+  :ignore_exceptions => ['ActionController::BadRequest','ActionController::InvalidCrossOriginRequest'] + ExceptionNotifier.ignored_exceptions,
   :email => {
     :email_prefix => "[spay/neuter clinic] ",
     :sender_address => %{tsolow@tekniklr.com},

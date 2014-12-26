@@ -10,9 +10,10 @@ class ContactsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create contact" do
-    post :create, :contact => @contact.attributes
-    assert_response :success
+  test "should send contact email" do
+    post :create, contact: {name: 'Shemp', email: 'test@example.com', content: 'this is a message'}
+    mail = ActionMailer::Base.deliveries.last
+    assert_equal 'Shemp <test@example.com>', mail['from'].to_s
   end
 
 end

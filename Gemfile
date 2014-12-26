@@ -12,6 +12,7 @@ gem 'haml'
 
 gem "jquery-ui-rails"
 gem "ckeditor"
+gem 'responders', '~> 2.0' # apparently the ckeditor gem uses respond_to
 gem "recaptcha", :require => "recaptcha/rails"
 
 # needed for authentication
@@ -36,6 +37,7 @@ end
 
 group :production do
   gem 'exception_notification'
+  gem 'rails_12factor'
 end
 
 # prevent console errors
