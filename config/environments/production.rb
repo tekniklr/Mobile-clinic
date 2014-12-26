@@ -42,10 +42,13 @@ MobileClinic::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
-  MobileClinic::Application.config.middleware.use ExceptionNotifier,
+  MobileClinic::Application.config.middleware.use ExceptionNotification::Rack,
+  :ignore_exceptions => ['ActionController::BadRequest'] + ExceptionNotifier.ignored_exceptions,
+  :email => {
     :email_prefix => "[spay/neuter clinic] ",
     :sender_address => %{tsolow@tekniklr.com},
     :exception_recipients => %w{tsolow@tekniklr.com drtsheltervet@gmail.com}
+  }
     
   # set up email
   config.action_mailer.delivery_method = :smtp
