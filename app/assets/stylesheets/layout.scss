@@ -14,7 +14,7 @@ video {
 }
 
 body {
-  background-image: url(/assets/background.png);
+  background-image: image-url("background.png");
   background-repeat: repeat-x;
   background-position: top left;
   background-color: $page_bg;
@@ -81,7 +81,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie8 #pagehead {
   }
   #catbox {
     float: right;
-    background-image: url(/assets/friends.png);
+    background-image: image-url("friends.png");
     background-repeat: no-repeat;
     background-position: top right;
     position: absolute;
@@ -120,7 +120,7 @@ html.ie6 #pagehead, html.ie7 #pagehead, html.ie8 #pagehead {
     }
     #catbox {
       float: right;
-      background-image: url(/assets/friends.png);
+      background-image: image-url("friends.png");
       background-repeat: no-repeat;
       background-position: top right;
       position: absolute;
