@@ -47,8 +47,8 @@ MobileClinic::Application.configure do
     :ignore_exceptions => ['ActionController::BadRequest','ActionController::InvalidCrossOriginRequest', 'ActionController::UnknownFormat'] + ExceptionNotifier.ignored_exceptions,
     :email => {
       :email_prefix => "[spay/neuter clinic] ",
-      :sender_address => %{tsolow@tekniklr.com},
-      :exception_recipients => %w{tsolow@tekniklr.com drtsheltervet@gmail.com}
+      :sender_address => %{apps@tekniklr.com},
+      :exception_recipients => %w{apps@tekniklr.com drtsheltervet@gmail.com}
   }
     
   # set up email
